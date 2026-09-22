@@ -1,0 +1,17 @@
+[Unit]
+Description=Scala pool: charts data collector (hash rate, difficulty, miners, workers on the home page)
+After=scala-pool-redis.service scala-pool-api.service
+Requires=scala-pool-redis.service
+[Service]
+Type=simple
+User=scalapool
+WorkingDirectory=/opt/scala-nodejs-pool
+ExecStart=/usr/bin/node /opt/scala-nodejs-pool/init.js -module=chartsDataCollector
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

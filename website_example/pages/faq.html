@@ -1,0 +1,96 @@
+<!-- FAQ (Scala). Two language blocks; the one matching the site language is shown. -->
+
+<div class="faq" data-faq="en">
+    <h3>Frequently Asked Questions (FAQ)</h3>
+
+    <h4 class="push-up-20">What do I use as my wallet address?</h4>
+    <div class="card padding-15 push-down-10">
+        A Scala <strong>address</strong>: <code>Ss…</code> or <code>Sv…</code>, 97 characters. In the Scala wallet run <code>address</code>.
+        Integrated addresses (with a payment id) are not accepted. Payments are sent to this address.
+    </div>
+
+    <h4 class="push-up-20">Which algorithm do I mine?</h4>
+    <div class="card padding-15 push-down-10">
+        Panthera / DefyX on the CPU (<code>rx/xla</code>), the RandomX variant of Scala. You need poolpayminer 1.1.6 or newer; a stock XMRig does not know this algorithm.
+    </div>
+
+    <h4 class="push-up-20">Can I change my difficulty?</h4>
+    <div class="card padding-15 push-down-10">
+        It adjusts automatically to your hashrate (about one share every 20 seconds). Fixed difficulty is not available.
+    </div>
+
+    <h4 class="push-up-20">How are rewards split?</h4>
+    <div class="card padding-15 push-down-10">
+        Proportionally to your shares in the round, with time weighting: older shares of a round weigh less than newer ones,
+        which protects against pool hopping. Use <code>solo:ADDRESS</code> as your login if you want to take the whole reward
+        for a block you find yourself instead of sharing it.
+    </div>
+
+    <h4 class="push-up-20">When do I get paid?</h4>
+    <div class="card padding-15 push-down-10">
+        A block reward is credited to the balances after <strong>70 confirmations</strong> (a block reward unlocks after 60 blocks, about 2 hours). Everyone whose balance
+        is above the minimum payout is paid in one transaction per round; the network fee is shared by the paid miners.
+        The payment appears on the Payments page with a link to the transaction in the block explorer.
+    </div>
+
+    <h4 class="push-up-20">The pool does not accept my address</h4>
+    <div class="card padding-15 push-down-10">
+        It must be a standard Scala address starting with <code>S</code> (<code>Ss…</code> or <code>Sv…</code>, 97 characters). Copy it from the wallet without spaces.
+    </div>
+
+    <h4 class="push-up-20">Why does my miner find nothing at some moments? (Diardi blocks)</h4>
+    <div class="card padding-15 push-down-10">
+        In the Scala network every block whose height is divisible by 4 can only be mined by the allow-listed "Diardi" miners of the Scala team. While the network waits for such a block,
+        the pool's miners cannot produce a valid block. <strong>poolpayminer rests during those blocks</strong> (its window says "Scala: resting while block N is found") and continues by itself when the block is found, usually within a couple of minutes; its own hashrate shows 0 meanwhile and the hashrate on this site is an average that is lower by the resting part. It does not change what you earn and saves electricity; <code>--no-diardi-pause</code> keeps the miner hashing. Every pool works on 3 of 4 blocks; this is a rule of the network, not a fault of the pool or of the miner.
+    </div>
+</div>
+
+<div class="faq" data-faq="ru">
+    <h3>Часто задаваемые вопросы (FAQ)</h3>
+
+    <h4 class="push-up-20">Какой адрес кошелька указывать?</h4>
+    <div class="card padding-15 push-down-10">
+        <strong>Адрес</strong> Scala: <code>Ss…</code> или <code>Sv…</code>, 97 символов. В кошельке Scala выполните <code>address</code>.
+        Integrated-адреса (с payment id) не принимаются. Выплаты отправляются на этот адрес.
+    </div>
+
+    <h4 class="push-up-20">Какой алгоритм майнить?</h4>
+    <div class="card padding-15 push-down-10">
+        Panthera / DefyX на процессоре (<code>rx/xla</code>), вариант RandomX для Scala. Нужен poolpayminer 1.1.6 или новее; обычный XMRig этот алгоритм не знает.
+    </div>
+
+    <h4 class="push-up-20">Можно ли изменить сложность?</h4>
+    <div class="card padding-15 push-down-10">
+        Она подстраивается под ваш хешрейт автоматически (примерно одна шара в 20 секунд). Фиксированной сложности нет.
+    </div>
+
+    <h4 class="push-up-20">Как делятся награды?</h4>
+    <div class="card padding-15 push-down-10">
+        Пропорционально вашим шарам в раунде, с учётом времени: старые шары раунда весят меньше новых, это защищает от переходов
+        майнеров между пулами. Укажите <code>solo:АДРЕС</code> в логине, если хотите забирать всю награду за найденный вами блок, а не делить её.
+    </div>
+
+    <h4 class="push-up-20">Когда придут выплаты?</h4>
+    <div class="card padding-15 push-down-10">
+        Награда за блок зачисляется на балансы после <strong>70 подтверждений</strong> (награда за блок разблокируется через 60 блоков, около 2 часов). Все, чей баланс выше минимальной выплаты,
+        получают деньги одной транзакцией за раунд; комиссию сети делят между собой получатели.
+        Выплата появляется на странице Payments со ссылкой на транзакцию в обозревателе.
+    </div>
+
+    <h4 class="push-up-20">Пул не принимает мой адрес</h4>
+    <div class="card padding-15 push-down-10">
+        Нужен обычный адрес Scala, начинающийся с <code>S</code> (<code>Ss…</code> или <code>Sv…</code>, 97 символов). Скопируйте его из кошелька без пробелов.
+    </div>
+
+    <h4 class="push-up-20">Почему иногда блоки не находятся? (блоки Diardi)</h4>
+    <div class="card padding-15 push-down-10">
+        В сети Scala каждый блок, высота которого делится на 4, могут майнить только майнеры из белого списка команды Scala («Diardi»). Пока сеть ждёт такой блок, майнеры пула не могут
+        создать действительный блок. <strong>poolpayminer в это время отдыхает</strong> (в его окне написано «Scala: resting while block N is found») и сам продолжает, когда блок найден, обычно через пару минут; его собственный хешрейт при этом показывает 0, а хешрейт на этом сайте усредняется и получается ниже на долю отдыха. На заработок это не влияет и экономит электричество; <code>--no-diardi-pause</code> заставляет майнер хешировать всё время. Любой пул работает на 3 блока из 4: это правило сети, а не неисправность пула или майнера.
+    </div>
+</div>
+
+<script>
+var faqLang = (typeof langCode !== 'undefined' && langCode === 'ru') ? 'ru' : 'en';
+$('.faq').hide().filter('[data-faq="' + faqLang + '"]').show();
+currentPage = { destroy: function () {}, update: function () {} };
+</script>

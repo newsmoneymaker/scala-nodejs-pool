@@ -1,0 +1,19 @@
+[Unit]
+Description=Scala pool: stratum server (miners, share checking with the rxhash helper, block submission)
+After=scala-pool-redis.service scala-node.service scala-wallet-rpc.service
+Requires=scala-pool-redis.service
+[Service]
+Type=simple
+User=scalapool
+WorkingDirectory=/opt/scala-nodejs-pool
+ExecStart=/usr/bin/node /opt/scala-nodejs-pool/init.js -module=pool
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+# ports below 1024 need this:
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

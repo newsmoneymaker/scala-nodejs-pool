@@ -1,0 +1,17 @@
+[Unit]
+Description=Scala pool: payment processor (sendmany from the pool wallet; emergency brake: deployment/pause-payments.sh)
+After=scala-pool-redis.service scala-node.service scala-wallet-rpc.service
+Requires=scala-pool-redis.service
+[Service]
+Type=simple
+User=scalapool
+WorkingDirectory=/opt/scala-nodejs-pool
+ExecStart=/usr/bin/node /opt/scala-nodejs-pool/init.js -module=payments
+Restart=always
+RestartSec=15
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

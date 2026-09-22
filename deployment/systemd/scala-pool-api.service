@@ -1,0 +1,17 @@
+[Unit]
+Description=Scala pool: public API (127.0.0.1:8118)
+After=scala-pool-redis.service scala-node.service scala-wallet-rpc.service
+Requires=scala-pool-redis.service
+[Service]
+Type=simple
+User=scalapool
+WorkingDirectory=/opt/scala-nodejs-pool
+ExecStart=/usr/bin/node /opt/scala-nodejs-pool/init.js -module=api
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

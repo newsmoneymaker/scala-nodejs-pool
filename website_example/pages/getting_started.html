@@ -1,0 +1,304 @@
+<!-- Getting started (Scala). Two language blocks; the one matching the site language is shown. -->
+
+<div class="gs" data-gs="en">
+    <div class="row"><div class="col-sm-12"><div class="gsGenerator"></div></div></div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Connection details</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-cloud"></i> Pool address: <span class="gsHost"></span></div>
+                    <div><i class="fa fa-cubes"></i> Algorithm: Panthera / DefyX, a RandomX variant (<code>rx/xla</code>), CPU</div>
+                    <div><i class="fa fa-lock"></i> Difficulty adjusts to your hashrate (vardiff)</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Username</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Your <strong>Scala address</strong> (<code>Ss…</code> or <code>Sv…</code>, 97 characters). In the wallet: <code>address</code>.</div>
+                    <div><i class="fa fa-server"></i> Optional worker name: <code>address+rig1</code></div>
+                    <div><i class="fa fa-info-circle"></i> Integrated addresses (with a payment id) are not accepted.</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Password</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Anything, for example <code>x</code></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Mining ports</h3>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr><th>Port</th><th>Description</th></tr>
+                        </thead>
+                        <tbody class="gsPortsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row push-up-15">
+        <div class="col-sm-12">
+            <h3 class="push-up-15">About the algorithm (Panthera / DefyX)</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <p>Scala mines with its own variant of RandomX (Panthera / DefyX): the input of every hash goes through blake2b, yespower and KangarooTwelve, and the RandomX parameters are
+                    smaller than Monero's (128 MB cache, 64 MB dataset). The RandomX key is the hash of the block at the last multiple of 2048 (minus a lag of 64 blocks); the pool hands out the
+                    block's hashing blob, the miner fills in the 4-byte nonce. Block time is 120 seconds.</p>
+                <ul>
+                    <li>A miner that knows <code>rx/xla</code> is needed: <strong>poolpayminer 1.1.6 or newer</strong> (a stock XMRig does not know this algorithm).</li>
+                    <li>Every block whose height is divisible by 4 belongs to the allow-listed "Diardi" miners of the Scala team (a rule of the network): nobody else can mine those heights, so every
+                        pool works on 3 of 4 blocks. poolpayminer rests during those blocks and says why in its window (<code>--no-diardi-pause</code> keeps it hashing); the hashrate of your miner shows 0 for a couple of minutes and the site's average is lower by that part. It does not change what you earn.</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Software</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li><strong>poolpayminer (Windows x64 and Linux x86-64):</strong> <a href="/downloads/">downloads</a>,
+                        <a href="https://github.com/newsmoneymaker/poolpayminer" target="_blank" rel="noopener">source code</a>. A modified XMRig with TLS support.
+                        <strong>Fee 1%</strong> (1 minute in about 100), shown at start-up; details on the download page.</li>
+                    <li><strong>Wallet</strong> (to get your address): <a href="https://github.com/scala-network/Scala" target="_blank" rel="noopener">Scala</a>.</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Rewards and payments</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li>Reward scheme: proportional with time weighting (older shares of a round weigh less).</li>
+                    <li>Block rewards become spendable after <strong>60 blocks</strong> (about 2 hours); the pool credits your balance after that.</li>
+                    <li>Payments are ordinary XLA transactions to your address. Everyone who is due is paid in one transaction per round, the network fee is shared by the paid miners.</li>
+                    <li>Modes: <code>prop:ADDRESS</code> (shared reward, default) or <code>solo:ADDRESS</code> (the block finder takes the reward).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gs" data-gs="ru">
+    <div class="row"><div class="col-sm-12"><div class="gsGenerator"></div></div></div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Параметры подключения</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-cloud"></i> Адрес пула: <span class="gsHost"></span></div>
+                    <div><i class="fa fa-cubes"></i> Алгоритм: Panthera / DefyX, вариант RandomX (<code>rx/xla</code>), процессор</div>
+                    <div><i class="fa fa-lock"></i> Сложность подстраивается под ваш хешрейт (vardiff)</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Логин</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Ваш <strong>адрес Scala</strong> (<code>Ss…</code> или <code>Sv…</code>, 97 символов). В кошельке: <code>address</code>.</div>
+                    <div><i class="fa fa-server"></i> Имя воркера по желанию: <code>адрес+rig1</code></div>
+                    <div><i class="fa fa-info-circle"></i> Integrated-адреса (с payment id) не принимаются.</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Пароль</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Любой, например <code>x</code></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Порты для майнинга</h3>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr><th>Порт</th><th>Описание</th></tr>
+                        </thead>
+                        <tbody class="gsPortsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row push-up-15">
+        <div class="col-sm-12">
+            <h3 class="push-up-15">Об алгоритме (Panthera / DefyX)</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <p>Scala майнится собственным вариантом RandomX (Panthera / DefyX): вход каждого хеша проходит через blake2b, yespower и KangarooTwelve, а параметры RandomX меньше, чем у Monero
+                    (кэш 128 МБ, датасет 64 МБ). Ключ RandomX это хеш блока на последней кратной 2048 высоте (со сдвигом 64 блока); пул выдаёт хешируемый блоб блока, майнер подставляет
+                    4-байтный nonce. Время блока 120 секунд.</p>
+                <ul>
+                    <li>Нужен майнер с поддержкой <code>rx/xla</code>: <strong>poolpayminer 1.1.6 или новее</strong> (обычный XMRig этот алгоритм не знает).</li>
+                    <li>Каждый блок, высота которого делится на 4, принадлежит майнерам из белого списка команды Scala («Diardi», правило сети): другие эти высоты майнить не могут, поэтому любой пул
+                        работает на 3 блока из 4. poolpayminer в это время отдыхает и пишет в своём окне, почему (<code>--no-diardi-pause</code> заставляет его хешировать всё время); хешрейт майнера на пару минут показывает 0, а усреднённый хешрейт на сайте получается ниже на эту долю. На заработок это не влияет.</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Программы</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li><strong>poolpayminer (Windows x64 и Linux x86-64):</strong> <a href="/downloads/">загрузки</a>,
+                        <a href="https://github.com/newsmoneymaker/poolpayminer" target="_blank" rel="noopener">исходный код</a>. Изменённый XMRig с поддержкой TLS.
+                        <strong>Комиссия 1%</strong> (1 минута из примерно 100), показывается при запуске; подробности на странице загрузок.</li>
+                    <li><strong>Кошелёк</strong> (чтобы получить адрес): <a href="https://github.com/scala-network/Scala" target="_blank" rel="noopener">Scala</a>.</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Награды и выплаты</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li>Схема наград: пропорциональная с учётом времени (старые шары раунда весят меньше).</li>
+                    <li>Награда за блок становится доступной через <strong>60 блоков</strong> (около 2 часов); после этого пул зачисляет её на ваш баланс.</li>
+                    <li>Выплаты это обычные транзакции XLA на ваш адрес. Все, кому пора платить, получают деньги одной транзакцией за раунд, комиссию сети делят между собой получатели.</li>
+                    <li>Режимы: <code>prop:АДРЕС</code> (общая награда, по умолчанию) или <code>solo:АДРЕС</code> (награду забирает нашедший блок).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ---------------------------------------------------------------------------------------------------------------
+// Config generator: address (+ optional deposit note, worker name) -> ready-to-use miner settings
+// ---------------------------------------------------------------------------------------------------------------
+var GS_POOLPAYMINER = true;      // false hides the poolpayminer variants (e.g. until the miner is published)
+
+var gsText = {
+    en: {
+        title: 'Config generator',
+        intro: 'Enter your address and get ready-made settings. Nothing is sent anywhere: the text is built in your browser. <a href="/downloads/">Download poolpayminer</a>.',
+        address: 'Your Scala address', addressHint: '97 characters, starts with "S"; in the wallet: <code>address</code>',
+        worker: 'Worker name', tls: 'Encrypted connection (TLS), recommended', miner: 'Miner',
+        mPpm: 'poolpayminer, config.json', mCli: 'poolpayminer, command line',
+        copy: 'Copy', copied: 'Copied', result: 'Result',
+        errAddress: 'The address must be a Scala address: "Ss…" or "Sv…", 97 characters (integrated addresses are not accepted).',
+        errWorker: 'The worker name may contain letters, digits, "-" and "_" (up to 32).',
+        fileHint: 'Save as config.json next to poolpayminer.exe', cliHint: 'Run in a command prompt'
+    },
+    ru: {
+        title: 'Генератор конфига',
+        intro: 'Введите свой адрес и получите готовые настройки. Ничего никуда не отправляется: текст собирается в вашем браузере. <a href="/downloads/">Скачать poolpayminer</a>.',
+        address: 'Ваш адрес Scala', addressHint: '97 символов, начинается с "S"; в кошельке: <code>address</code>',
+        worker: 'Имя воркера', tls: 'Шифрованное соединение (TLS), рекомендуется', miner: 'Майнер',
+        mPpm: 'poolpayminer, config.json', mCli: 'poolpayminer, командная строка',
+        copy: 'Копировать', copied: 'Скопировано', result: 'Результат',
+        errAddress: 'Нужен адрес Scala: "Ss…" или "Sv…", 97 символов (integrated-адреса не принимаются).',
+        errWorker: 'Имя воркера: буквы, цифры, "-" и "_" (до 32 символов).',
+        fileHint: 'Сохраните как config.json рядом с poolpayminer.exe', cliHint: 'Запустите в командной строке'
+    }
+};
+
+function gsEsc(t) { return $('<div>').text(t).html(); }
+
+function gsInit(lang) {
+    var t = gsText[lang];
+    var box = $('.gs[data-gs="' + lang + '"] .gsGenerator');
+    if (!box.length) return;
+    var opts = '<option value="ppm">' + t.mPpm + '</option><option value="cli">' + t.mCli + '</option>';
+    box.html(
+        '<h3>' + t.title + '</h3><div class="card padding-l-10 padding-r-10"><p>' + t.intro + '</p><div class="row">' +
+        '<div class="col-sm-6"><label>' + t.address + '</label><input type="text" class="form-control gsAddr" spellcheck="false" autocomplete="off" placeholder="Ss…">' +
+            '<p class="text-muted"><small>' + t.addressHint + '</small></p></div>' +
+        '<div class="col-sm-3"><label>' + t.worker + '</label><input type="text" class="form-control gsWorker" value="rig1" spellcheck="false" autocomplete="off"></div>' +
+        '<div class="col-sm-3"><label>' + t.miner + '</label><select class="form-control gsMiner">' + opts + '</select></div>' +
+        '</div><div class="row">' +
+        '<div class="col-sm-12"><div class="checkbox"><label><input type="checkbox" class="gsTls" checked> ' + t.tls + '</label></div></div></div>' +
+        '<div class="gsErr text-danger" style="display:none"></div>' +
+        '<h4>' + t.result + ' <small class="gsHint"></small> <button type="button" class="btn btn-default btn-xs gsCopy">' + t.copy + '</button></h4>' +
+        '<pre class="gsOut"></pre></div>'
+    );
+    box.on('input change', 'input, select', function () { gsRender(lang); });
+    box.on('click', '.gsCopy', function () {
+        var text = box.find('.gsOut').text(), btn = $(this);
+        var done = function () { btn.text(t.copied); setTimeout(function () { btn.text(t.copy); }, 1500); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+        else { var r = document.createRange(); r.selectNodeContents(box.find('.gsOut')[0]); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); try { document.execCommand('copy'); done(); } catch (e) {} }
+    });
+    gsRender(lang);
+}
+
+function gsRender(lang) {
+    var t = gsText[lang];
+    var box = $('.gs[data-gs="' + lang + '"] .gsGenerator');
+    if (!box.length) return;
+
+    var address = $.trim(box.find('.gsAddr').val());
+    var worker = $.trim(box.find('.gsWorker').val());
+    var tls = box.find('.gsTls').is(':checked');
+    var miner = box.find('.gsMiner').val();
+
+    var errors = [];
+    var valid = /^S[1-9A-HJ-NP-Za-km-z]{96}$/.test(address);
+    var shown = address || 'YOUR_XLA_ADDRESS';
+    if (address && !valid) errors.push(t.errAddress);
+    if (worker && !/^[A-Za-z0-9_\-]{1,32}$/.test(worker)) errors.push(t.errWorker);
+
+    var login = shown + (worker ? '+' + worker : '');
+
+    var ports = (typeof lastStats !== 'undefined' && lastStats && lastStats.config && lastStats.config.ports) || [];
+    var port = 0, plain = 0, enc = 0;
+    for (var i = 0; i < ports.length; i++) {
+        if (ports[i].tls) { if (!enc) enc = ports[i].port; } else if (!plain) plain = ports[i].port;
+    }
+    port = (tls ? enc : plain) || (enc || plain || 9700);
+    var useTls = tls ? !!enc : false;
+    var host = (typeof getPoolHost === 'function' && typeof lastStats !== 'undefined' && lastStats) ? getPoolHost() : location.hostname;
+    var url = host + ':' + port;
+
+    var out = '', hint = '';
+    if (miner === 'ppm') {
+        hint = t.fileHint;
+        out = JSON.stringify({
+            autosave: false,
+            cpu: {enabled: true, 'huge-pages': true, 'max-threads-hint': 50},
+            randomx: {mode: 'auto'},
+            pools: [{algo: 'rx/xla', url: url, user: login, pass: 'x', keepalive: true, tls: useTls}]
+        }, null, 4);
+    } else {
+        hint = t.cliHint;
+        out = 'poolpayminer.exe -a rx/xla ' + (useTls ? '--tls ' : '') + '-o ' + url + ' -u ' + login + ' -p x -k';
+    }
+
+    box.find('.gsOut').text(out);
+    box.find('.gsHint').text(hint);
+    box.find('.gsErr').html(errors.map(gsEsc).join('<br>')).toggle(errors.length > 0);
+}
+
+gsInit('en');
+gsInit('ru');
+
+// Show the block that matches the site language (falls back to English)
+var gsLang = (typeof langCode !== 'undefined' && langCode === 'ru') ? 'ru' : 'en';
+$('.gs').hide().filter('[data-gs="' + gsLang + '"]').show();
+
+// Update current page
+var gsLastPorts = '';
+currentPage = {
+    destroy: function () {
+    },
+    update: function () {
+        var ports = (lastStats && lastStats.config && lastStats.config.ports) || [];
+        var portsJson = JSON.stringify(ports);
+        if (gsLastPorts !== portsJson) {
+            gsLastPorts = portsJson;
+            var rows = '';
+            for (var i = 0; i < ports.length; i++) {
+                rows += '<tr><td>' + $('<div>').text(ports[i].port).html() + '</td><td>' +
+                    $('<div>').text(ports[i].desc || '').html() + '</td></tr>';
+            }
+            $('.gsPortsBody').html(rows);
+            $('.gsPort').text(ports.length ? ports[0].port : '');
+        }
+        $('.gsHost').text(getPoolHost());
+        gsRender('en');
+        gsRender('ru');
+    }
+};
+</script>

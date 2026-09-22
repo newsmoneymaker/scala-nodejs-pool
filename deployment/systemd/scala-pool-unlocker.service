@@ -1,0 +1,17 @@
+[Unit]
+Description=Scala pool: block unlocker (credits the miners after the coinbase maturity)
+After=scala-pool-redis.service scala-node.service scala-wallet-rpc.service
+Requires=scala-pool-redis.service
+[Service]
+Type=simple
+User=scalapool
+WorkingDirectory=/opt/scala-nodejs-pool
+ExecStart=/usr/bin/node /opt/scala-nodejs-pool/init.js -module=unlocker
+Restart=always
+RestartSec=15
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Scala pool wallet (wallet-rpc, 127.0.0.1:11820, no password: local use only)
+After=scala-node.service
+Requires=scala-node.service
+
+[Service]
+Type=simple
+User=scalapool
+ExecStart=/opt/scala/bin/scala-wallet-rpc --wallet-file /opt/scala/wallet/pool --password-file /opt/scala/wallet/password --rpc-bind-ip 127.0.0.1 --rpc-bind-port 11820 --disable-rpc-login --daemon-address 127.0.0.1:11812 --trusted-daemon --log-file /opt/scala/wallet/wallet-rpc.log --max-log-file-size 0
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=60
+
+[Install]
+WantedBy=multi-user.target

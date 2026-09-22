@@ -1,0 +1,16 @@
+[Unit]
+Description=Scala node (scalad)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=scalapool
+ExecStart=/opt/scala/bin/scalad --data-dir /opt/scala/data --non-interactive --rpc-bind-ip 127.0.0.1 --rpc-bind-port 11812 --p2p-bind-port 11811 --check-updates disabled --out-peers 32 --log-level 0 --max-log-file-size 0
+Restart=on-failure
+RestartSec=15
+LimitNOFILE=65536
+TimeoutStopSec=120
+
+[Install]
+WantedBy=multi-user.target
